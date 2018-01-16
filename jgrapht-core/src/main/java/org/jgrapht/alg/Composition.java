@@ -23,7 +23,9 @@ import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
 /**
+ * Static methods for composition of relations.
  *
+ * See https://en.wikipedia.org/wiki/Composition_of_relations
  */
 public class Composition {
 
@@ -43,6 +45,11 @@ public class Composition {
 //        }
 //    }
 
+    /*
+     * Composition of relations <code>a</code> and <code>b</code>.
+     *
+     * Note the argument order!
+     */
     public static <V> Graph<V, DefaultEdge> compose(Graph<V, DefaultEdge> b, Graph<V, DefaultEdge> a) {
         Graph<V, DefaultEdge> result = new DefaultDirectedGraph(DefaultEdge.class);
         for(V x : a.vertexSet()) {
