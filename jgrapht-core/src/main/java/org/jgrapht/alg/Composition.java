@@ -49,6 +49,9 @@ public class Composition {
      * Composition of relations <code>a</code> and <code>b</code>.
      *
      * Note the argument order!
+     *
+     * The result is currently always a directed graph. (But this may change
+     * in the future.)
      */
     public static <V> Graph<V, DefaultEdge> compose(Graph<V, DefaultEdge> b, Graph<V, DefaultEdge> a) {
         Graph<V, DefaultEdge> result = new DefaultDirectedGraph(DefaultEdge.class);
