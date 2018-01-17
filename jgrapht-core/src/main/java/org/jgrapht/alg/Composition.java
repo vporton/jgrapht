@@ -52,6 +52,8 @@ public class Composition {
      *
      * The result is currently always a directed graph. (But this may change
      * in the future.)
+     *
+     * TODO: Should we also sum weights of the two graphs?
      */
     public static <V> Graph<V, DefaultEdge> compose(Graph<V, DefaultEdge> b, Graph<V, DefaultEdge> a) {
         Graph<V, DefaultEdge> result = new DefaultDirectedGraph(DefaultEdge.class);
