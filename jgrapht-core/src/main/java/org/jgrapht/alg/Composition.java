@@ -46,6 +46,33 @@ public class Composition {
 //    }
 
     /*
+     * Composition of relations <code>a</code> and <code>b</code>
+     * (for arbitary edge type <code>E</code>).
+     * Consider using the special method for <code>DefaultEdge</code> instead.
+     *
+     * The composition is recorded in <code>target</code>.
+     * <code>target</code> is expected to be an empty graph.
+     *
+     * Note the argument order!
+     *
+     * TODO: Should we also sum weights of the two graphs?
+     */
+    public static <V, E> void compose(Graph<V, E> b, Graph<V, E> a, Graph<V, E> target) {
+        for(V x : a.vertexSet()) {
+            java.util.Set<E> edges1 = a.outgoingEdgesOf(x);
+            for(V z : b.vertexSet()) {
+                for(E e1: edges1) {
+                    final V y = a.getEdgeTarget(e1);
+                    if(b.containsEdge(y, z)) {
+                        Graphs.addEdgeWithVertices(target, x, z);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    /*
      * Composition of relations <code>a</code> and <code>b</code>.
      *
      * Note the argument order!
@@ -57,19 +84,7 @@ public class Composition {
      */
     public static <V> Graph<V, DefaultEdge> compose(Graph<V, DefaultEdge> b, Graph<V, DefaultEdge> a) {
         Graph<V, DefaultEdge> result = new DefaultDirectedGraph(DefaultEdge.class);
-        for(V x : a.vertexSet()) {
-            java.util.Set<DefaultEdge> edges1 = a.outgoingEdgesOf(x);
-            for(V z : b.vertexSet()) {
-                for(DefaultEdge e1: edges1) {
-                    final V y = a.getEdgeTarget(e1);
-                    if(b.containsEdge(y, z)) {
-                        Graphs.addEdgeWithVertices(result, x, z);
-                        break;
-                    }
-                }
-            }
-        }
+        compose(b, a, result);
         return result;
     }
-
 }
