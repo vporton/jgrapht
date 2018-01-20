@@ -50,9 +50,9 @@ public class Composition {
      * (for arbitary edge type <code>E</code>).
      * Consider using the special method for <code>DefaultEdge</code> instead.
      *
-     * @param <b> the second graph
-     * @param <a> the first graph
-     * @param <target> where to store the result
+     * @param b the second graph
+     * @param a the first graph
+     * @param target where to store the result
      *
      * The composition is recorded in <code>target</code>.
      * <code>target</code> is expected to be an empty graph.
@@ -79,8 +79,8 @@ public class Composition {
     /**
      * Composition of relations <code>a</code> and <code>b</code>.
      *
-     * @param <b> the second graph
-     * @param <a> the first graph
+     * @param b the second graph
+     * @param a the first graph
      *
      * @return the composition
      *
