@@ -45,7 +45,7 @@ public class Composition {
 //        }
 //    }
 
-    /*
+    /**
      * Composition of relations <code>a</code> and <code>b</code>
      * (for arbitary edge type <code>E</code>).
      * Consider using the special method for <code>DefaultEdge</code> instead.
@@ -72,7 +72,7 @@ public class Composition {
         }
     }
 
-    /*
+    /**
      * Composition of relations <code>a</code> and <code>b</code>.
      *
      * Note the argument order!
