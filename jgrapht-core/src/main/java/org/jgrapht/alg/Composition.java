@@ -50,6 +50,8 @@ public class Composition {
      * (for arbitary edge type <code>E</code>).
      * Consider using the special method for <code>DefaultEdge</code> instead.
      *
+     * @param <V> vertex type
+     * @param <E> edge type
      * @param b the second graph
      * @param a the first graph
      * @param target where to store the result
@@ -79,6 +81,7 @@ public class Composition {
     /**
      * Composition of relations <code>a</code> and <code>b</code>.
      *
+     * @param <V> vertex type
      * @param b the second graph
      * @param a the first graph
      *
