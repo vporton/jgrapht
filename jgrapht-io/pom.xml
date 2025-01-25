@@ -37,8 +37,7 @@
 				</executions>
 				<configuration>
 					<transformers>
-						<transformer
-							implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+						<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 							<manifestEntries>
 								<!-- Use unique OSGi bundle symbolic name for uber artifact. Otherwise 
 									e.g. jgrapht-io-x.y.z.jar and jgrapht-io-x.y.z-uber.jar could not be deployed 
@@ -186,7 +185,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
+			<version>3.17.0</version>
 		</dependency>
 	</dependencies>
 </project>
